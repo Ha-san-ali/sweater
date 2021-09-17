@@ -1,0 +1,20 @@
+{
+  "name": "sweater",
+  "version": "1.0.0",
+  "description": "Is it sweater weather?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ha-san-ali/sweater.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ha-san-ali/sweater/issues"
+  },
+  "homepage": "https://github.com/Ha-san-ali/sweater#readme"
+}
