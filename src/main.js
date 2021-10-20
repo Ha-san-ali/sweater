@@ -4,6 +4,7 @@ const input = document.querySelector(".top-banner input");
 const msg = document.querySelector(".top-banner .msg");
 const list = document.querySelector(".ajax-section .cities");
 const li = document.createElement("li");
+
 /*SUBSCRIBE HERE FOR API KEY: https://home.openweathermap.org/users/sign_up*/
 const apiKey = "27f2a9f11155973e7ef74a36ed757a32";
 
@@ -40,25 +41,26 @@ form.addEventListener("submit", e => {
   //ajax here
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiKey}&units=metric`;
 
+
   fetch(url)
     .then(response => response.json())
     .then(data => {
       const { main, name, sys, weather } = data;
+      const sweater = main.temp<16 ? "Yes" : "No";
       const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${
         weather[0]["icon"]
       }.svg`;
-
+      
+      
       li.classList.add("city");
       const markup = `
-        <h1 class="sweater" data-name="${name},${sys.country}">
-          <span>${name}</span>
-          <sup>${sys.country}</sup>
-        </h1>
+      <div class="city-temp">${sweater}
+        </div>
         <h2 class="city-name" data-name="${name},${sys.country}">
           <span>${name}</span>
           <sup>${sys.country}</sup>
         </h2>
-        <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
+        <h2">${Math.round(main.temp)}<sup>°C</sup></h2>
         <figure>
           <img class="city-icon" src="${icon}" alt="${
         weather[0]["description"]
@@ -77,3 +79,5 @@ form.addEventListener("submit", e => {
   form.reset();
   input.focus();
 });
+
+
