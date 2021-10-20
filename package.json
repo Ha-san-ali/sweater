@@ -2,7 +2,7 @@
   "name": "sweater",
   "version": "1.0.0",
   "description": "Is it sweater weather?",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
