@@ -7,6 +7,8 @@
   --banner: #DEEFF7;
   --placeholder: #53627c;
   --text_dark: #1e2432;
+  --text_yes: #EAEEDA;
+  --text_no: #FCF2F5;
   --darkred: #c3112d;
   --orange: #ff8c00;
 }
@@ -109,23 +111,29 @@ input {
 
 
 /* SECTION #2
-––––––––––––––––––––––––––––––––––––––––––––––––––
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
 .ajax-section {
-  margin: 70px 0 20px;
+  display: flex;
+  margin-top: 2em;
+  letter-spacing: 0.02em;
+  padding: 0 0 0 0;
 }
 
-.ajax-section .cities {
-  display: grid;
-  grid-gap: 32px 20px;
-  grid-template-columns: repeat(4, 1fr);
+.sweaterweather{
+  font-size: 2rem;
+  font-weight: bold;
 }
 
+.ajax-section .city-temp {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+/*
 .ajax-section .city {
   position: relative;
   padding: 40px 10%;
   border-radius: 20px;
-  background: var(--text_light);
-  color: var(--text_med);
 }
 
 .ajax-section .city::after {
@@ -138,7 +146,6 @@ input {
   z-index: -1;
   opacity: 0.3;
   border-radius: 20px;
-  background: var(--text_light);
 }
 
 .ajax-section figcaption {
@@ -147,22 +154,18 @@ input {
   letter-spacing: 0.05em;
 }
 
-.ajax-section .city-temp {
-  font-size: 5rem;
-  font-weight: bold;
-  margin-top: 10px;
-  color: var(--text_dark);
-}
+
 
 .ajax-section .city sup {
   font-size: 0.5em;
 }
 
+
 .ajax-section .city-name sup {
   padding: 0.2em 0.6em;
   border-radius: 30px;
   color: var(--text_light);
-  background: var(--orange);
+  
 }
 
 .ajax-section .city-icon {
@@ -190,11 +193,25 @@ input {
   .heading{
   font-size: 3rem;
   }
+  .sweaterweather{
+    font-size: 3rem;
+  }
+  
+  .ajax-section .city-temp {
+    font-size: 2rem;
+  }
 }
 
 @media screen and (min-width:530px) {
   .heading{
   font-size: 4rem;
+  }
+  .sweaterweather{
+    font-size: 4rem;
+  }
+  
+  .ajax-section .city-temp {
+    font-size: 3rem;
   }
 }
 
@@ -202,13 +219,30 @@ input {
   .heading{
   font-size: 7rem;
   }
+  .sweaterweather{
+    font-size: 7rem;
+  }
+  
+  .ajax-section .city-temp {
+    font-size: 4rem;
+  }
 }
 
-@media screen and (min-width:1000px) {
+@media screen and (min-width:1450px) {
   .heading{
   font-size: 9rem;
   }
+  .sweaterweather{
+    font-size: 9rem;
+  }
+  
+  .ajax-section .city-temp {
+    font-size: 5rem;
+  }
 }
+
+
+
 
 
 /* MQ OLD

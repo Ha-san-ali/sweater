@@ -47,6 +47,7 @@ form.addEventListener("submit", e => {
     .then(data => {
       const { main, name, sys, weather } = data;
       const sweater = main.temp<16 ? "Yes" : "No";
+      const colorSweater = main.temp<16 ? "color:#EAEEDA" : "color:#FCF2F5";
       const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${
         weather[0]["icon"]
       }.svg`;
@@ -54,19 +55,8 @@ form.addEventListener("submit", e => {
       
       li.classList.add("city");
       const markup = `
-      <div class="city-temp">${sweater}
-        </div>
-        <h2 class="city-name" data-name="${name},${sys.country}">
-          <span>${name}</span>
-          <sup>${sys.country}</sup>
-        </h2>
-        <h2">${Math.round(main.temp)}<sup>°C</sup></h2>
-        <figure>
-          <img class="city-icon" src="${icon}" alt="${
-        weather[0]["description"]
-      }">
-          <figcaption>${weather[0]["description"]}</figcaption>
-        </figure>
+      <h1 class="sweaterweather" style=${colorSweater}>${sweater}</h1>
+      <h1 class="city-temp" style=${colorSweater} data-name="${name},${sys.country}"> It is currently&nbsp;${Math.round(main.temp)}°C in ${name}, ${sys.country}</h1>
       `;
       li.innerHTML = markup;
       list.appendChild(li);
